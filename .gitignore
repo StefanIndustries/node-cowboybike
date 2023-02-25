@@ -1,3 +1,14 @@
+# Editors
+.idea
+.idea/
+.idea/*
+
+# Compiled code
+lib
+
+# Test code
+testprogram.mjs
+
 # Logs
 logs
 *.log
