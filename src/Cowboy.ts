@@ -1,5 +1,7 @@
 import axios, {AxiosInstance, AxiosRequestConfig, AxiosHeaders} from "axios";
 import { access } from "fs";
+import {Me} from "./Models/Me";
+import {Bike} from "./Models/Bike";
 
 export class Cowboy {
     private axiosInstance: AxiosInstance;
@@ -43,8 +45,6 @@ export class Cowboy {
             request.headers['Client'] = this.client;
             request.headers['Access-Token'] = this.accessToken;
             request.headers['Uid'] = this.uid;
-
-            console.log(request.headers);
             return request;
         });
 
@@ -66,7 +66,6 @@ export class Cowboy {
     }
 
     private async login(): Promise<boolean> {
-        console.log('login');
         const result = await this.axiosInstance({
             method: 'POST',
             url: '/auth/sign_in',
@@ -86,19 +85,19 @@ export class Cowboy {
         return false;
     }
 
-    public async getMe(): Promise<any> {
+    public async getMe(): Promise<Me> {
         const result = await this.axiosInstance({
             method: 'GET',
             url: '/users/me'
         });
-        return result.data;
+        return <Me>result.data;
     }
 
-    public async getBike(bikeId: number): Promise<any> {
+    public async getBike(bikeId: number): Promise<Bike> {
         const result = await this.axiosInstance({
             method: 'GET',
             url: `/bikes/${bikeId}`
         });
-        return result.data;
+        return <Bike>result.data;
     }
 }
