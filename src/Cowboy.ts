@@ -17,7 +17,6 @@ export class Cowboy {
             baseURL: 'https://app-api.cowboy.bike',
             timeout: 30000,
             headers: {
-                'Client-Type': 'Android-App',
                 'X-Cowboy-App-Token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9'
             },
             signal: this.abortController.signal
