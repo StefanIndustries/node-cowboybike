@@ -1,6 +1,6 @@
 {
   "name": "node-cowboybike",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Stefan Simon",
   "main": "lib/Cowboy.js",
   "types": "lib/Cowboy.d.ts",
